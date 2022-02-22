@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" id="frml" action="">
+        <p>
+            <label for="">Tên đăng nhập</label>
+            <input onkeyup="daonutDN()" type="text" id="un" class="txt" name="un" placeholder="Nhập từ 6-20 ký tự">
+        </p>
+        <p>
+            <label for="">Mật khẩu</label>
+            <input onkeyup="daonutDN()" type="password" class="txt" id="mk" name="mk">
+        </p>
+        <p>
+            <label for=""></label>
+            <button type="submit" name="btndangnhap" id="btndangnhap" value="nut">Đăng nhập</button>
+        </p>
+    </form>
+</body>
+</html>
+<script>
+document.getElementById("btndangnhap").disabled = true;
+
+</script>
+<script>
+function daonutDN() {
+    let u = document.getElementById("un").value;
+    let p = document.getElementById("mk").value;
+    if(u.length > 0 && p.length) {
+document.getElementById("btndangnhap").disabled = false;
+        
+    } else {
+document.getElementById("btndangnhap").disabled = true;
+
+    }
+}
+</script>
