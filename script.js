@@ -4,8 +4,13 @@ function login() {
     // let kq = "";
      if (ar1 == "Phan Văn Đạt" && ar2 == "pdat14102000") {
         location.assign("demo.html");
-     } else {
-         alert("login again");
-     }
+
+     } else if (ar1 !== "Phan Văn Đạt")
+         {
+             alert("sai tài khoản")
+         } else {
+             alert("sai mật khẩu")
+         }
+     
 
 }

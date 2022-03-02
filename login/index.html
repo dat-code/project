@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin lực lượng tham chiến</title>
+    <style>
+      .form-army{
+          display:block;
+          background-color:rgb(209, 245, 209);
+          width:400px;
+      }
+      input {
+          margin:10px 0;
+      }
+      label{
+          padding:0 10px;
+      }
+      .navbar {
+            height:200px;
+            background:url("female.jpeg");
+            background-size:cover;
+            background-position: center;
+
+      }
+    </style>
+</head>
+<body class="bodys" onload="renderListarmys()">
+    <nav class="navbar"></nav>
+<div class="form-army">
+    <h3>Thông tin quân nhân</h3>
+    <label for="">
+          Họ và tên
+    </label>
+    <input type="text" id="fullname">
+    <span id="fullname-error" style="color: red;"></span>
+    <br>
+    <label for="">
+        Giới tính
+  </label>
+  <input type="radio" name="gender" id="male" value="Nam"> Nam 
+  <input type="radio" name="gender" id="female" value="Nữ"> Nữ
+   <span id="gender-error" style="color:red;"></span>
+  <br>
+    <label for="">
+        Ngày tháng năm sinh
+  </label>
+  <input type="text" id="date">
+  <span id="date-error" style="color:red;"></span>
+  <br>
+  <label for="">
+    Số hiệu quân nhân
+</label>
+<input type="text" id="sh">
+<span id="sh-error" style="color:red;"></span>
+
+<br>
+<label>Cấp bậc</label>
+<input type="text" id="cb">
+<span id="cb-error" style="color:red;"></span>
+
+<br>
+<label for="">
+    chức vụ
+</label>
+<input type="text" id="cv">
+<span id="cv-error" style="color:red;"></span>
+
+<br>
+<button onclick="save()" style="background-color:yellow; padding:5px 20px;">lưu</button>
+
+</div>
+<div class="list-army" id="list-armys">
+    <h3>Danh sách lực lượng tham gia gìn giữ hòa bình </h3>
+    <table id="grid-armys" width="600" border="1" cellpadding="0" cellpađing="0">
+       
+    </table>
+</div>
+</body>
+</html>
+<script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+
+<script src="./demo.js">
+
+</script>
