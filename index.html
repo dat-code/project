@@ -4,23 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ai là triệu phú</title>
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+    .navbar{
+        background: url('./login/female.jpeg');
+        height: 300px;
+        color: red;
+        font-size: 20px;
+        background-position: center;
+        background-size: cover;
+    }
+    input {
+        margin: 10px 20px;
+    }
+</style>
 </head>
 <body>
-    <h1>Informationform</h1>
-   <form>
-    <p>Tài khoản <input type="text" id="name"> </p>
-    <p>Mật khẩu <input type="password" id="mk"></p>
-   </form>
-   
-   <button onclick="login()">login</button>
-   <!-- <h2><a href="./demo.html">alo</a></h2> -->
-
-
-    
+    <nav class="navbar">
+        <i>Nếu như ngày xưa anh không mộng mơ <br>
+            Thì giờ ta đã bên nhau rồi <br>
+            Nếu như ngày xưa anh không vội vã <br>
+            Nụ cười kia đã trao anh rồi <br>
+            Giờ thì em như sương mai <br>
+            Trên lá rớt rơi ngoài hiên <br>
+            Vì lòng anh vương chút nắng <br>
+            Nên ta cứ mãi xa nhau<br> Phải chi tôi gặp đồng chí sớm hơn!. <br>Và đó là lý do tôi yêu QĐNDVN </i>
+        
+    </nav>
+   <div>
+       <label for="">STT</label>
+       <input type="number" id="id">
+   </div>
+   <div>
+    <label for="">Họ và Tên</label>
+    <input type="text" id="name">
+</div>
+<div>
+    <label for="">Năm sinh</label>
+    <input type="number" id="age">
+</div>
+<div>
+    <label for="">Cấp bậc</label>
+    <input type="text" id="Star">
+</div>
+<div>
+    <button onclick="add()">Submit</button>
+</div>
+<table class="table" id="render">
+    <h3>Danh sách các chiến sĩ lên đường thực hiện nhiệm vụ</h3>
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Họ và Tên</th>
+            <th>Năm sinh</th>
+            <th>Cấp bậc</th>
+            <th></th>
+        </tr>
+    </thead>
+</table>
 </body>
-<script type="text/javascript" src="./script.js"></script>
-
-
 </html>
-
+<script src="./demo.js">
+           
+</script>

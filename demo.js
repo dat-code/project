@@ -1,91 +1,77 @@
-function Save()
-{
-    let fullname = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let phone = document.getElementById('phone').value;
-    let address = document.getElementById('address').value;
-    let gender = '';
+let data = [];
+         
+         function add() {
+             var item_id = document.getElementById("id").value;
+             var item_name = document.getElementById("name").value;
+             var item_age = document.getElementById("age").value;
+             var item_cb = document.getElementById("Star").value;
+             var item = {
+                 Id: item_id,
+                 Name: item_name,
+                 Age: item_age,
+                 address: item_cb
+             }
+             
+             let index = data.findIndex((c)=>c.Id==item.Id)
+             if(index>=0) {
+                 data.splice(index,1,item)
+             } else {
+             data.push(item)
+                 
+             }
 
-    if (document.getElementById('male').checked)
-    {
-        gender = document.getElementById('male').value;
-    }
-    else if(document.getElementById('female').checked)
-    {
-        gender = document.getElementById('female').value;
-    }
-    
+             render();
+             clear();
+         }   
+         function render() {
+             table = ` <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>address</th>
+            <th>Action</th>
+                     
+        </tr>`
+         
+        for(let i =0; i<data.length; i++) {
+             table += ` <tr>
+            <th>${data[i].Id}</th>
+            <th>${data[i].Name}</th>
+            <th>${data[i].Age}</th>
+            <th>${data[i].address}</th>
+            <th>
+                <button onclick="deleteItem(${data[i].Id})">Delete</button>
+                <button onclick="editItem(${data[i].Id})">Edit</button>
+                
+                </th>
+        </tr>`
+        }
+          document.getElementById("render").innerHTML = table;
+         }
 
-    if(fullname && email && phone && address && gender)
-    {
-        let students = localStorage.getItem('students') ?  JSON.parse(localStorage.getItem('students')) : [];
-        students.push({
-            fullname: fullname,
-            email: email,
-            phone: phone,
-            address: address,
-            gender: gender,
-        });
+         function clear() {
+             document.getElementById("id").value = "";
+             document.getElementById("name").value = "";
+             document.getElementById("age").value = "";
+             document.getElementById("Star").value = "";
+         }
 
-        localStorage.setItem('students', JSON.stringify(students));
+         function deleteItem(x) {
+             for(let i =0; i<data.length; i++) {
+                   if(data[i].Id == x) {
+                       data.splice(i,1)
+                        render();
+                   }
+             }
+         }
 
-        this.liststudents();
-    } 
- }
-
-function liststudents() {
-let students = localStorage.getItem('students') ?  JSON.parse(localStorage.getItem('students')) : [];
-
-console.log(students.length);
-if(students.length === 0){
-    document.getElementById('grid-view-table').style.display = 'none';
-    return false;
-}
-else{
-document.getElementById('grid-view-table').style.display = 'block';
-}
-let tableContent = `
-        <tr>
-            <td>STT</td>
-            <td>Họ và tên</td>
-            <td>Cấp bậc</td>
-            <td>Số hiệu</td>
-            <td>Giới tính</td>
-            <td>Đơn vị</td>
-            <td></td>
-        </tr> `;
-
-    students.forEach((student,n) => {
-        let studentId =  n;
-        let genderLabel = parseInt(student.gender) === 1 ? 'Nam' : 'Nữ';
-        n++;   
-
-    tableContent += `
-        <tr>
-            <td>${n}</td>
-            <td>${student.fullname}</td>
-            <td>${student.email}</td>
-            <td>${student.phone}</td>
-            <td>${genderLabel}</td>
-            <td>${student.address}</td>
-            <td>
-                <a href='#' onclick='Delete(${studentId})'>Delete</a> 
-            </td>
-        </tr> `;
-    })
-
-    document.getElementById('list-students').innerHTML = tableContent;
-}
-
-function Delete(id) {
-
-alert("Bạn muốn xóa sinh viên này");
-
-let students = localStorage.getItem('students') ?  JSON.parse(localStorage.getItem('students')) : [];
-
-students.splice(id, 1);
-
-localStorage.setItem('students', JSON.stringify(students));
-
-liststudents(); 
-}
+         function editItem(x) {
+            for(let i =0; i<data.length; i++) {
+                   if(data[i].Id == x) {
+                       document.getElementById("id").value = data[i].Id;
+                       document.getElementById("name").value = data[i].Name;
+                       document.getElementById("age").value = data[i].Age;
+                       document.getElementById("Star").value = data[i].address;
+                   }
+             }
+         }

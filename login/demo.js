@@ -57,12 +57,12 @@ if (_.isEmpty(gender)) {
    if (fullname && gender && day && number && cb && cv ) {
     let armys = localStorage.getItem('armys') ?  JSON.parse(localStorage.getItem('armys')) : [];
     armys.push({
-        fullname: fullname,
-        gender: gender,
-        day: day,
-        number: number,
-        cb: cb,
-        cv: cv,
+        Name: fullname,
+        Gender: gender,
+        Day: day,
+        Num: number,
+        CB: cb,
+        CV: cv,
     });
    localStorage.setItem('armys', JSON.stringify(armys));
    this.renderListarmys();
@@ -79,7 +79,7 @@ function renderListarmys()
     } 
     document.getElementById("list-armys").style.display = 'block';
     
-    let tablearmys = `
+     tablearmys = `
    <tr>
    <td>STT</td>
    <td>Họ và tên</td>
@@ -98,14 +98,14 @@ armys.forEach((armys, index) => {
     tablearmys += `
     <tr>
     <td>${index}</td>
-    <td>${armys.fullname}</td>
-    <td>${armys.gender}</td>
-    <td>${armys.day}</td>
-    <td>${armys.number}</td>
-    <td>${armys.cb}</td>
-    <td>${armys.cv}</td>
+    <td>${armys.Name}</td>
+    <td>${armys.Gender}</td>
+    <td>${armys.Day}</td>
+    <td>${armys.Num}</td>
+    <td>${armys.CB}</td>
+    <td>${armys.CV}</td>
     <td>
-    <a href="#" >Edit</a> | <a href="#" onclick="Deletearmys(${armysId})">Xóa</a> 
+    <a href="#" onclick="Changevalue(${armysId})" >Edit</a> | <a href="#" onclick="Deletearmys(${armysId})">Xóa</a> 
     </td>
 </tr>`
   });
@@ -118,4 +118,20 @@ function Deletearmys(id) {
     armys.splice(id, 1);
     localStorage.setItem('armys',JSON.stringify(armys));
     renderListarmys();
+}
+
+function Changevalue(id) {
+    for(let i =0; i<armys.length; i++) {
+        if(armys[i].Id == id) {
+            document.getElementById("fullname").value = armys[i].;
+            document.getElementById("date").value = data[i].Name;
+            document.getElementById("sh").value = data[i].Age;
+            document.getElementById("cb").value = data[i].Age;
+            document.getElementById("cv").value = data[i].Age;
+            
+
+            
+        }
+  }
+
 }
