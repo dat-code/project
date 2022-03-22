@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       class Shape {
+           constructor () {
+               this.color = "green";
+               this.isFilled = true;
+           }
+        //    constructor (color, isFilled) {
+        //          this.color = color;
+        //          this.isFilled = isFilled;
+        //    }
+           print() {
+               console.log(shape.toString());
+           }
+           toString() {
+               return "A shape with color of " + this.color + " and" + (this.isFilled ? " fill" : "not fiiled");
+           }
+       }
+
+       class Circle extends Shape {
+           constructor(color, isFilled, radius = 1.0) {
+               super(color, isFilled);
+               this.radius = radius;
+           }
+           getArea() {
+                  console.log("S = " + this.radius * 2 * 3.14) ;              
+           }
+           getPerimetter() {
+                 console.log(" c = " + 2 * this.radius * 3.14);
+           }
+           toRadius() {
+               return "A Circle with radius= " + this.radius + "," + "which is a subclass of " ;
+           }
+           print() {
+               console.log(shape.toRadius() + shape.toString());
+           }
+          
+       }
+
+       class Rectangle extends Shape {
+       constructor(color, isFilled, width = 1.0, length = 1.0) {
+           super(color, isFilled);
+           this.width = width;
+           this.length = length;
+       }
+       getArea() {
+           console.log("Chcn " + this.length + this.width * 2);
+       }
+       getPerimetter() {
+           console.log("Shcn " + this.length * this.width);
+       }
+       toString() {
+           return "A Rectangle with width= " + this.width + " and " + "length = " + this.length + ", " + "which is a subclass of ";
+
+       }
+       print() {
+           console.log(rectangle.toString() + shape.toString())
+       }
+       }
+       class Square extends Rectangle {
+               
+       }
+
+    let shape = new Circle();
+    shape.print();
+    let rectangle = new Rectangle();
+    rectangle.print();
+    let square = new Square();
+    
+    
+    
+   
+    </script>
+</body>
+</html>

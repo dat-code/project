@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class cha
+        class Animal {
+                Say() {
+                    console.log("I am annimal?")
+                }
+                static hello(name) {
+                    console.log("heloo" + name)
+                }
+        }
+        // class con kế thừa
+        // class Dog extends  Animal {
+        //         Say() {
+        //             console.log("I am a dog")
+        //         }
+        //         hello(name) {
+        //             console.log("hi" + name)
+        //         }
+        // }
+        // demo extend 
+        // demo extend 2
+        let alaska = new Animal(); // khởi tạo đối tượng
+        alaska.Say() // sử dụng phương thức của class cha
+        Animal.hello("Nam ") // phương thức static
+    </script>
+</body>
+</html>

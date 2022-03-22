@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  // arrow function : Hàm mũi tên
+  // const loger = (a,b) => a + b ;
+  // const loger1 = (a,b) => ({a:a,b:b});
+  // const farm = content => console.log(content);
+  // farm("nông dân");
+  // console.log(loger1(3,5))
+  // console.log(loger(2,5));
+  // endhanced oject literal: định nhĩa key value cho đối tượng, phương thức, key dưới dạng biến;
+  // var name = "Javascrip";
+  // var price = 1000;
+  
+  // var cours = {
+  //   name,
+  //   price,
+  //   getName() {
+  //     return name;
+  //   }
+  // }
+  // console.log(cours.getName());
+  // var feildName = "name";
+  // var feildPrice = "price";
+  // const cours1 = {
+  //   [feildName]: 'Javascipt',
+  //   [feildPrice]: 1000
+  // }
+  // console.log(cours1);
+  // Destructuring & rest
+  // var array = ["Javascript", 'ruby', 'python'];
+//  var [a, b, c] = array;
+//  var [a,...rest] = array;
+
+ 
+// console.log(a)
+// console.log(rest)
+// var cours2 = {
+// name: "Javascipt",
+// price: "20000"
+// }
+// var {name, price, modul = "reactjs"} = cours2;
+// console.log(name, price, modul)
+// toán tử rest 
+// function loger(...params) {
+//   console.log(params);
+// }
+// console.log(loger(1,2,3,4,5,6,7,8));
+
+function logger({name,...rest}) { // đối vs mảng cũng tương tự chỉ thay dấu ngoặc
+console.log(name);
+console.log(rest)
+
+}
+logger({
+  name:"Javascript",
+  price: 10000,
+  address: "codegym"
+})
+// toán tử spread
+var array1 = ['Javascipt', 'Ruby', 'Php'];
+var array2 = ['ReactJS', 'css', 'c++'];
+var array3 = [...array2,...array1];
+console.log(array3)
+</script>

@@ -7,30 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" id="frml" action="">
-        <p>
-            <label for="">Tên đăng nhập</label>
-            <input  type="text" id="un" class="txt" name="un" placeholder="Nhập từ 6-20 ký tự">
-        </p>
-        <p>
-            <!-- <label for="">Mật khẩu</label> -->
-            <!-- <input onkeyup="daonutDN()" type="password" class="txt" id="mk" name="mk"> -->
-        </p>
-        <p>
-            <label for=""></label>
-            <input type="button" value="Đăng ký" onclick="daonutDN()">
-            <input type="button" value="Đăng nhập" onclick="daonutDN2()">
-
-        </p>
-    </form>
+    
 </body>
 </html>
 <script>
 // document.getElementById("btndangnhap").disabled = true;
-
-</script>
-<script>
-var numbers = [1, 2];
-numbers[3] = 3;
-document.write(numbers.length);
+ var emailkey = "email";
+ 
+ var myInfo = {
+     name: "Văn Đạt",
+     age: "22",
+     address: "Bình Thuận",
+     [emailkey]: "pdat1207@gmail.com",
+     getName: function() {
+         return(this.name);
+     }
+ };
+//  delete myInfo.age;
+ console.log(myInfo.getName());
 </script>
