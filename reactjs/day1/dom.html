@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="message">A paraghrap</p>
+    <button class="btn btn-primary">Save</button>
+    <div id="app">
+        <header>
+            <nav>
+                <ul id="menu">
+                    <li class="item">HTML</li>
+                    <li class="item">CSS</li>
+                    <li class="item highlight">JavaScript</li>
+                    <li class="item">TypeScript</li>
+                </ul>
+            </nav>
+            <h1>getElementsByClassName Demo</h1>
+        </header>
+         <section>
+           
+                <h2 class="heading-secondary">Example 1</h2>
+            
+                <h2 class="heading-secondary">Example 2</h2>
+                <h2 class="heading-secondary">Example 3</h2>
+                <h2 class="heading-secondary">Example 4</h2>
+                <h2 class="heading-secondary">Example 5</h2>
+                
+                <button id="btnCount">Count H2</button>
+        </section>
+    </div>
+    <script>
+    //    const p = document.getElementById("message");
+    //    let elements = document.getElementsByClassName("btn btn-primary");
+      let menu = document.getElementById("menu");
+      let items = menu.getElementsByClassName("item");
+      let data = [].map.call(items,item => item.textContent);
+      let tagname = document.getElementById("btnCount");
+      tagname.addEventListener('click', () => {
+          let headings = document.getElementsByTagName("h2");
+          console.log(`The number of h2 tags: ${headings.length}`);
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .d-none{
+          display:none;
+      }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>Services</li>   
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <button target="_blank" id="btnsend" >send</button>
+    <script>
+   // chèn một nút trước một nút khác parentnode.insertBefore;
+   let menu = document.getElementById("menu");
+   let li = document.createElement("li");
+   li.textContent = 'Home';
+
+   menu.insertBefore(li, menu.firstElementChild);
+   
+   // thiết lập giá trị trên một thuộc tính cho một phần tử;
+   let btn = document.getElementById("btnsend");
+   btn.setAttribute('name', 'send');
+   // xử lý sự kiện 
+   let ShowAlert = function() {
+       alert('clicked!');
+   };
+   btn.addEventListener('click', ShowAlert);
+   btn.removeEventListener('click', ShowAlert);
+//    btn.setAttribute('disabled', '');
+   // nhận giá trị của một thuộc tính;
+    let btn2 = document.getElementById("btnsend");
+      let taget = btn2.getAttribute('target');
+      console.log(taget)
+    
+
+
+    </script>
+</body>
+</html>
