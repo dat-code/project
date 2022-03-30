@@ -37,4 +37,11 @@ const Kids2 = [];
  });
  console.log(Kids2)
 
+ const chidren = Kids.filter(kid => kid.age < 11 && kid.age > 5).map(kid => ({
+     id:kid.age,
+     name:kid.name
+ }));
+ console.log(chidren)
+
+
 // console.log([...[...'...']].length)
